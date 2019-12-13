@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body { 
+			min-width: 800px; 
+			min-height: 900px; 
+			overflow-x: hidden; 
+			font-family: Arial, sans-serif; 
+			font-size: 12px; 
+		}
+
+		input#save { 
+			font-weight: bold; width: auto; 
+		}
+		input#save_coverpics { 
+			font-weight: bold; width: auto; 
+		}
+		.container {
+			width:90%;
+			margin-top:20px !important;
+		}
+		input[disabled] {
+			background-color: #fdccc9 !important;
+			}
+	</style>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<script src="jquery-2.1.4.min.js"></script>
+	<script src="Sortable.min.js"></script>
+	<script src="token.js"></script>
+	<script src="popup.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div id="coverpics" ></div>
+		<input id="save_coverpics" class="button-primary"  type="submit" value="Save Cover Pics" /> Left to save: <span id='img_counter'></span>
+        <form id="add_product">
+			<div class='row'>
+				<label for="title">Title</label>
+				<input type="text" id="title" name="goods[name]" value="" class="u-full-width" />
+				
+				<!--<label for="url">Url</label>
+				<input type="text" id="url" name="url" value="" class="u-full-width" />-->
+				
+				<!--<label for="summary">Details</label>
+				<textarea id="summary" name="goods[detail]" class="u-full-width"> </textarea>-->
+				<input type='hidden' name='goods[detail]' value=' ' />
+			</div>
+			<div class='row'>
+				<div class="four columns">
+					<label for="price">Price (default: +20%)</label>
+					<input type="text" id="price" name="goods[sale_price]"  value="" />
+				</div>
+				<div class="four columns">
+					<label for="qty">Qty</label>
+					<input type="text" id="qty" name="goods[stocks]"  value="200" />
+				</div>
+				<div class="four columns">
+					<label for="yunfei">Yunfei</label>
+					<input type="text" id="yunfei" name="goods[ship_chain]"  value="5" />
+				</div>
+			</div>
+			<p>
+				<input id="save" type="submit" class="button-primary"  value="Save New Product" />
+				<span id="status-display"></span>
+			</p>
+			<input type='hidden' name="language" value='zh' />
+			<input type='hidden' id='bibo_token' name="token" value='BIBO_SESSION_TOKEN' />
+			<input type='hidden' name="goods[category_id]" value='154856906952251' />
+			<input type='hidden' id='cover' name="goods[cover]" value='3fac3cb7e03d40fbe877207ec80632e4' />
+			<input type='hidden' id='paytype0' name="goods[pay_type][0]" value='1' />
+			<input type='hidden' id='paytype1' name="goods[pay_type][1]" value='2' />
+			<input type='hidden' id='paytype2' name="goods[pay_type][2]" value='3' />
+			<input type='hidden' id='paytype3' name="goods[pay_type][3]" value='4' />
+			<input type='hidden' id='paytype4' name="goods[pay_type][4]" value='5' />
+			<input type='hidden' id='paytype5' name="goods[pay_type][5]" value='6' />
+			<input type='hidden' id='paytype6' name="goods[pay_type][6]" value='7' />
+			<input type='hidden' id='paytype7' name="goods[pay_type][7]" value='8' />
+			<input type='hidden' id='describe' name="goods[describe]" value=' ' />
+			<input type='hidden' id='intro' name="goods[intro]" value=' ' />
+			<input type='hidden' id='propertydetail' name="goods[propertydetail]" value=' ' />
+			<input type='hidden' id='property' name="goods[property]" value='' />
+			<div id='add_product_pic'></div>
+			<div id='add_product_prop'></div>
+        </form>
+		<hr style="margin: 1em 0em" />
+		<input type='text' id='param_name' placeholder='property name' /><input type='submit' id='add_param' value='+ add +' />
+		<div id="param_table"></div>
+		<input type='submit' style='background-color: #C3C3F0; color: white' id='generate' value='Generate' />
+		<div id="property_list"></div>
+	</div>
+</body>
+</html>
